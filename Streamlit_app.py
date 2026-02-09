@@ -231,7 +231,7 @@ if model is not None and df is not None:
             st.markdown("### 📋 Cluster Description")
             st.markdown(f"""
                 <div class="cluster-info">
-                    <p><strong>{cluster_details['description']}</strong></p>
+                    <p color = 'black'><strong>{cluster_details['description']}</strong></p>
                 </div>
             """, unsafe_allow_html=True)
             
@@ -247,7 +247,7 @@ if model is not None and df is not None:
             cluster_stats = clustered_data[clustered_data['Cluster'] == cluster]
             
             st.markdown(f"""
-                <div class="cluster-info">
+                <div class="cluster-info" color = "black">
                     <p><strong>Size:</strong> {len(cluster_stats)} customers ({len(cluster_stats)/len(clustered_data)*100:.1f}%)</p>
                     <p><strong>Avg Age:</strong> {df[df.index.isin(cluster_stats.index)]['Age'].mean():.1f} years</p>
                     <p><strong>Avg Income:</strong> ${df[df.index.isin(cluster_stats.index)]['Annual Income (k$)'].mean():.1f}k</p>
